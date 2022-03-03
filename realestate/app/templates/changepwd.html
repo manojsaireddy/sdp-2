@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+window.addEventListener( "pageshow", function ( event ) {
+  var historyTraversal = event.persisted ||
+                         ( typeof window.performance != "undefined" &&
+                              window.performance.navigation.type === 2 );
+  if ( historyTraversal ) {
+    // Handle page restore.
+    window.location.reload();
+  }
+});
+</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style type="text/css">
+      .change-password {
+    padding: 28%;
+    margin-top: -21%;
+}
+.change-password .card-header {
+    padding: 3%;
+    border: 1px solid #bdbdbd;
+}
+.change-password .card-body {
+    background: #ffffff;
+    border: 1px solid #bdbdbd;
+    padding: 7%;
+    text-align: left;
+    font-size: 13px;
+    margin-bottom: -78%;
+}
+.change-password .btn{
+    width: 100%;
+    margin-top: 5%;
+    font-size: 13px;
+}
+    </style>
+  </head>
+  <body>
+
+<!------ Include the above in your HEAD tag ---------->
+  {% csrf_token %}
+<form method="post" action="{% url 'changepwd1' %}">
+    {% csrf_token %}
+<div class="change-password">
+        <div class="card-header">
+            <h2>Change Your Password</h2>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="pwd">Current Password</label>
+                <input type="password" id="pwd" name="opwd" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="pwd">New Password</label>
+                <input type="password" id="pwd" name="npwd" class="form-control">
+                <span class="form-text small text-muted">The password must be 8-20 characters, and must <em>NOT</em> contain spaces.
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Verify</label>
+                <input type="password" id="pwd" name="pwd" class="form-control">
+                <span class="form-text small text-muted">To confirm, type the new password again.
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn" data-toggle="modal" data-target="#myModal" Value="Click on this button to verify">
+            </div>
+        </div>
+    </div>
+</div>
+    {% csrf_token %}
+    </form>
+  </body>
+</html>

@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  border-radius: 20px;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  border-radius: 20px;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+/* Column container */
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Main column */
+.main {
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background:cyan;
+}
+
+.footer-content{
+ padding: 20px;
+  text-align: center;
+  background:cyan;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 90%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Next & previous buttons */
+.prev1, .next1 {
+  cursor: pointer;
+  position: absolute;
+  top: 140%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Position the "next button" to the right */
+.next1 {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: red;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev1:hover, .next1:hover {
+  background-color: red;
+}
+
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+
+  <h1>JSR SUNCITY</h1>
+  <p>Full Fill Your Dreams.</p>
+</div>
+
+<div class="navbar">
+  <a href="/logouthome">Home</a>
+  <a href="{% url 'aboutus' %}">About</a>
+  <a href="{% url 'services' %}">Services</a>
+     <a href="{% url 'changepwd' %}">changepwd</a>
+     <a href="{% url 'logout' %}" class="right">Logout</a>
+
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>About Our excellence</h2>
+    <img src="{% static 'a8.jpg' %}" alt="fest img" width="350" height="150">
+    <p>we are having 25 years of excellence in real-estate business</p>
+    <h3>Moreover of our estate</h3>
+    <p>2-Bhk flats</p>
+   <img src="{% static 'a1.jpg' %}" alt="fest img" width="350" height="150">
+    <p>3-Bhk flats</p>
+    <img src="{% static 'a2.jpg' %}" alt="fest img" width="350" height="150">
+    <p>Commericial</p>
+    <img src="{% static 'a3.jpg' %}" alt="fest img" width="350" height="150">
+	<p>Lands</p>
+    <img src="{% static 'a4.jpg' %}" alt="fest img" width="350" height="150">
+  </div>
+  <div class="main">
+    <div class="navbar"  style="color:#ffd700">
+    <h2><marquee behavior="scroll" direction="right">Flats Available..Register now!!!</marquee></h2>
+	</div>
+<h1>Resdential-2BHK flats</h1>
+<div class="slideshow-container">
+  <div class="mySlides1">
+    <img src="{% static 'a5.jpg' %}" alt="sponsor Logo" width="1000" height="300">
+  </div>
+
+  <div class="mySlides1">
+    <img src="{% static 'a6.jpg' %}" alt="sponsor Logo" width="1000" height="300">
+  </div>
+
+  <div class="mySlides1">
+    <img src="{% static 'a7.jpg' %}" alt="sponsor Logo" width="1000" height="300">
+  </div>
+
+  <a style="background-color:red" class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a style="background-color:red" class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+</div>
+
+<h1>lands</h1>
+<div class="slideshow-container">
+  <div class="mySlides2">
+    <img src="{% static 'download7.jpg' %}" alt="sponsor Logo" width="1000" height="300">
+  </div>
+
+  <div class="mySlides2">
+    <img  src="{% static 'a7.jpg' %}" alt="sponsor Logo" width="270" height="180">
+  </div>
+
+  <div class="mySlides2">
+    <img  src="{% static 'a6.jpg' %}" alt="sponsor Logo" width="270" height="180">
+  </div>
+  <a style="background-color:red" class="prev1" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a style="background-color:red" class="next1" onclick="plusSlides(1, 0)">&#10095;</a>
+</div>
+
+
+
+
+</div>
+
+<script>
+var slideIndex = [1,1];
+var slideId = ["mySlides1", "mySlides2"]
+showSlides(1, 0);
+showSlides(1, 1);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex[no]-1].style.display = "block";
+}
+</script>
+
+  </div>
+</div>
+<div class="footer-content">
+      <div class="footer-section about">
+        <h1 class="logo-text"><span>JSR</span> SUNCITY</h1>
+        <p>JSR is an indian real estate business with offices around the world Together which provides value for money </p>
+        <div class ="contact">
+        <span><i class="fa fa-envelope"></i> &nbsp; JSR@gmail.com</span>
+        <span><i class="fa fa-phone"></i> &nbsp; 834-567-321</span>
+      </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+
+</html>
